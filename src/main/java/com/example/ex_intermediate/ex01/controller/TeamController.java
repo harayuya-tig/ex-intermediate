@@ -1,3 +1,8 @@
+/**
+ * ページの表示の処理を記述する
+ * @author harayuya
+ */
+
 package com.example.ex_intermediate.ex01.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +20,6 @@ public class TeamController {
     @Autowired
     private TeamService service;
 
-    @RequestMapping("")
-    public void test(){
-        System.out.println("テスト");
-    }
-
     /** 
      * 全チーム一覧のviewへの遷移
      * @return 全チーム一覧のview
@@ -36,10 +36,6 @@ public class TeamController {
      */
     @RequestMapping("/show-detail")
     public String showDetail(Integer id, Model model) {
-        //プリントデバッグ
-        System.out.println("素の文字");
-        System.out.println(service.findById(id).getTeamName());
-        System.out.println(service.findById(id).getHeadQuarters());
         model.addAttribute("team", service.findById(id));
         return "ex01/show-detail";
     }

@@ -1,3 +1,8 @@
+/**
+ * ページの表示の業務処理を技術する
+ * @author harayuya
+ */
+
 package com.example.ex_intermediate.ex01.service;
 
 import org.springframework.stereotype.Service;

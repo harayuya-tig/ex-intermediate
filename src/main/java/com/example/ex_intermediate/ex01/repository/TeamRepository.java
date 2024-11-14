@@ -1,3 +1,8 @@
+/**
+ * Teamテーブルを操作する
+ * @author harayuya
+ */
+
 package com.example.ex_intermediate.ex01.repository;
 
 import org.springframework.stereotype.Repository;
@@ -18,6 +23,7 @@ public class TeamRepository {
     @Autowired
     private NamedParameterJdbcTemplate template;
 
+    /** クエリの結果を受取り、対応するフィールドと紐づける */
     private static final RowMapper<Team> TEAM_ROW_MAPPER = (rs, i) -> {
         Team team = new Team();
         team.setId(rs.getInt("id"));
@@ -32,7 +38,7 @@ public class TeamRepository {
 
     /**
      * 全件検索を行う
-     * @return 全チームのオブジェクトのリスト
+     * @return 全チームのリストのオブジェクト
      */
     public List<Team> findAll() {
         List<Team> teamList = new ArrayList<Team>();
@@ -45,7 +51,7 @@ public class TeamRepository {
 
     /**
      * idでのチーム情報の全件検索を行う
-     * @param id
+     * @param id ID
      * @return idに合致するチームのオブジェクト
      */
     public Team findById(Integer id) {

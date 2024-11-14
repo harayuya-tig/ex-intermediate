@@ -1,12 +1,23 @@
+/**
+ * チーム情報を格納する
+ * @author harayuya
+ */
+
 package com.example.ex_intermediate.ex01.domain;
 
 public class Team {
     
+    /** ID */
     private Integer id;
+    /** 所属するリーグ名 */
     private String leagueName;
+    /** チーム名 */
     private String teamName;
+    /** 本拠地 */
     private String headQuarters;
+    /** 発足日 */
     private String inauguration;
+    /** 歴史 */
     private String history;
     
     public Integer getId() {

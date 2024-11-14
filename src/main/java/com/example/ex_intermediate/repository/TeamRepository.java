@@ -4,6 +4,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import java.util.List;
 import java.util.ArrayList;
 import com.example.ex_intermediate.domain.Team;
@@ -27,17 +29,30 @@ public class TeamRepository {
     };
 
     /**
-     * チームの全件検索を行う
+     * 全件検索を行う
      * @return 全チームのオブジェクトのリスト
      */
     public List<Team> findAll() {
         List<Team> teamList = new ArrayList<Team>();
         
-        String sql ="SELECT id,league_name,team_name,headquarters,inauguration,history FROM teams ORDER BY inauguration;";;
-
+        String sql ="SELECT id,league_name,team_name,headquarters,inauguration,history FROM teams ORDER BY inauguration;";
         teamList = template.query(sql, TEAM_ROW_MAPPER);
 
         return teamList;
     }
 
+    /**
+     * idでのチーム情報の全件検索を行う
+     * @param id
+     * @return idに合致するチームのオブジェクト
+     */
+    public Team findById(Integer id) {
+        Team team = new Team();
+
+        String sql = "SELECT id,league_name,team_name,headquarters,inauguration,history FROM teams WHERE id=:id;";
+        SqlParameterSource param = new MapSqlParameterSource("id", id);
+        team = template.queryForObject(sql, param, TEAM_ROW_MAPPER);
+
+        return team;
+    }
 }

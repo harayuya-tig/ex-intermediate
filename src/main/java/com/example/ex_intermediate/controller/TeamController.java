@@ -13,9 +13,15 @@ public class TeamController {
     @Autowired
     private TeamService service;
 
+    /** 
+     * 全チーム一覧の表示
+     * @return 全チーム一覧のview
+     */
     @RequestMapping("/list")
     public String showList(Model model) {
         model.addAttribute("teamList", service.findAll());
         return "show-list";
     }
+
+    
 }

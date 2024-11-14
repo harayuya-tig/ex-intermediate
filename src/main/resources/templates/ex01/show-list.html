@@ -6,15 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>野球チーム一覧</h2>
-
-    <h3>
-        <div th:each="team : ${showList}">
-                <a th:href="@{/team/list?id=} + ${team.id}">
-                    <span th:text="${team.name}">dummy</span>
-                </a>
-                <br>
-        </div>
-    </h3>
+    <h2>野球チーム一覧</h2><br>
+    <div th:each="team : ${teamList}">
+            <!-- <span th:text="${team.teamName}"></span> -->
+            <a th:href="@{/team/show-detail?id={id}(id=${team.id})}">
+                <span th:text="${team.teamName}">dummy</span>
+            </a>
+            <br>
+            <br>
+    </div>
 </body>
 </html>

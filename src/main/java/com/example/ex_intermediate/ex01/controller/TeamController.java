@@ -36,6 +36,10 @@ public class TeamController {
      */
     @RequestMapping("/show-detail")
     public String showDetail(Integer id, Model model) {
+        //プリントデバッグ
+        System.out.println("素の文字");
+        System.out.println(service.findById(id).getTeamName());
+        System.out.println(service.findById(id).getHeadQuarters());
         model.addAttribute("team", service.findById(id));
         return "ex01/show-detail";
     }

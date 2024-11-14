@@ -6,17 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <span>test</span>
-    <span th:text="${team.name}">チーム名</span> -->
     <h3>球団名</h3>
-    <span th:text="${team.name}">dummy</span><br>
+    <span th:text="${team.teamName}">dummy</span><br>
     <h3>本拠地</h3>
-    <span th:text="${team.headquarters}">dummy</span><br>
+    <span th:text="${team.headQuarters}">dummy</span><br>
     <h3>発足</h3>
-    <span th:text="${#dates.format(team.inauguration, 'yyyy年MM月dd日')}">dummy</span><br>
+    <span th:text="${team.inauguration}">dummy</span><br>
     <h3>歴史</h3>
     <span th:text="${team.history}">dummy</span><br>
     <br>
-    <input type="submit" value="戻る" th:action="@{/team/show-list}">
+    <form th:action="@{/team/show-list}" method="get">
+        <input type="submit" value="戻る" />
+    </form>
 </body>
 </html>

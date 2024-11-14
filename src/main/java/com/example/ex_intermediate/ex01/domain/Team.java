@@ -1,13 +1,11 @@
 package com.example.ex_intermediate.ex01.domain;
 
-import java.time.LocalDate;
-
 public class Team {
     
     private Integer id;
     private String leagueName;
     private String teamName;
-    private String headQuaters;
+    private String headQuarters;
     private String inauguration;
     private String history;
     
@@ -29,16 +27,16 @@ public class Team {
     public void setTeamName(String teamName) {
         this.teamName = teamName;
     }
-    public String getHeadQuaters() {
-        return headQuaters;
+    public String getHeadQuarters() {
+        return headQuarters;
     }
-    public void setHeadQuaters(String headQuaters) {
-        this.headQuaters = headQuaters;
+    public void setHeadQuarters(String headQuarters) {
+        this.headQuarters = headQuarters;
     }
-    public LocalDate getInauguration() {
+    public String getInauguration() {
         return inauguration;
     }
-    public void setInauguration(LocalDate inauguration) {
+    public void setInauguration(String inauguration) {
         this.inauguration = inauguration;
     }
     public String getHistory() {
@@ -50,6 +48,6 @@ public class Team {
     @Override
     public String toString() {
         return "Team [id=" + id + ", leagueName=" + leagueName + ", teamName=" + teamName + ", headQuaters="
-                + headQuaters + ", history=" + history + "]";
+                + headQuarters + ", history=" + history + "]";
     }
 }

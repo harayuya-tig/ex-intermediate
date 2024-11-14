@@ -7,12 +7,13 @@ import org.springframework.ui.Model;
 import com.example.ex_intermediate.service.TeamService;
 
 @Controller
+@RequestMapping("/team")
 public class TeamController {
     
     @Autowired
     private TeamService service;
 
-    @RequestMapping("/show-list")
+    @RequestMapping("/list")
     public String showList(Model model) {
         model.addAttribute("teamList", service.findAll());
         return "show-list";

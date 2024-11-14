@@ -13,7 +13,6 @@ import org.springframework.ui.Model;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.example.ex_intermediate.ex03.domain.Cloth;
 import com.example.ex_intermediate.ex03.form.ClothForm;
 import com.example.ex_intermediate.ex03.service.ClothService;
@@ -22,13 +21,13 @@ import com.example.ex_intermediate.ex03.service.ClothService;
 @RequestMapping("/cloth")
 public class ClothController {
     
+    @Autowired
+    ClothService service;
+
     @ModelAttribute
     public ClothForm setUpForm() {
         return new ClothForm();
     }
-
-    @Autowired
-    ClothService service;
 
     @RequestMapping("/input-form")
     public String inputForm() {
@@ -38,13 +37,19 @@ public class ClothController {
     @RequestMapping("/input-info")
     public String inputInfo(ClothForm form, Model model) {
         List<Cloth> clothList = new ArrayList<>();
+        
         clothList = service.searchByColorAndGender(form.getColor(), form.getGender());
 
-        /** テスト用 */
-        for (Cloth cloth : clothList) {
-            System.out.println(cloth.getCategory());
-        }
+        model.addAttribute("clothList", clothList);
 
         return "ex03/show-list";
+
+        /** テスト用 
+        for (Cloth cloth : clothList) {
+            System.out.println("テスト");
+            System.out.println(cloth.getCategory());
+        }
+        return "ex03/test";
+        */
     }
 }

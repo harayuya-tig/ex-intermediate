@@ -24,8 +24,6 @@ import com.example.ex_intermediate.ex03.service.ClothService;
 public class ClothRepository {
 
     @Autowired
-    ClothService service;
-
     NamedParameterJdbcTemplate template;
 
     private static final RowMapper<Cloth> CLOTH_ROW_MAPPER = (rs, i) -> {

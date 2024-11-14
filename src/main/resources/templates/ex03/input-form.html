@@ -10,18 +10,18 @@
         <fieldset>
             <legend>性別</legend>
             <div>
-                <input type="radio" id="man" name="gender" value="男" checked th:field="*{gender}">
+                <input type="radio" id="man" name="gender" value="0" th:field="*{gender}" checked>
                 <label for="man">Man</label>
             </div>
             <div>
-                <input type="radio" id="woman" name="gender" value="女" th:field="*{gender}">
+                <input type="radio" id="woman" name="gender" value="1" th:field="*{gender}">
                 <label for="woman">women</label>
             </div>
         </fieldset>
         <fieldset>
             <legend>色</legend>
             <select id="color" name="color" th:field="*{color}">
-                <option calue=""></option>
+                <option value=""></option>
                 <option value="赤">赤</option>
                 <option value="青">青</option>
                 <option value="黄">黄</option>

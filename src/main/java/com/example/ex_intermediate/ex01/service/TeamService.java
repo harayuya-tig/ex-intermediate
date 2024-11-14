@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.ex_intermediate.ex01.domain.Team;
 import com.example.ex_intermediate.ex01.repository.TeamRepository;
-
 import java.util.List;
 
 @Service

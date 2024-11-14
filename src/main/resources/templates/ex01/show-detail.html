@@ -13,7 +13,9 @@
     <h3>発足</h3>
     <span th:text="${team.inauguration}">dummy</span><br>
     <h3>歴史</h3>
-    <span th:text="${team.history}">dummy</span><br>
+    <div th:each="sentence : ${teamHistoryDivSentences}">
+        <span th:text="${sentence}"></span>
+    </div>
     <br>
     <form th:action="@{/team/show-list}" method="get">
         <input type="submit" value="戻る" />

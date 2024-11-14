@@ -24,13 +24,14 @@ public class HotelController {
 
     @RequestMapping("")
     private String index() {
-        return "input";
+        return "ex02/input";
     }
 
-    @RequestMapping("/search-by-less-than-price")
-    private String searchByLessThanPrice(HotelForm form, Model model) {
-        List<Hotel> hotelList = service.searchByLessThanPrice(form.getId());
+    @RequestMapping("/search")
+    private String search(HotelForm form, Model model) {
+        List<Hotel> hotelList = service.searchByLessThanPrice(form.getPrice());
         model.addAttribute("hotelList", hotelList);
-        return "show-list";
+
+        return "ex02/show-list";
     } 
 }

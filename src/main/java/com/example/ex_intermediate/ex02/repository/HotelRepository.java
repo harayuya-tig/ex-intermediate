@@ -44,15 +44,11 @@ public class HotelRepository {
     public List<Hotel> searchByLessThanPrice(Integer price) {
         List<Hotel> hotelList = new ArrayList<Hotel>();
 
-        String sql = "SELECT id,area_name,hotel_name,address,nearest_station,price,parking FROM hotels WHERE price >= :price;";
+        String sql = "SELECT id,area_name,hotel_name,address,nearest_station,price,parking FROM hotels WHERE price <= :price;";
 
         SqlParameterSource param = new MapSqlParameterSource().addValue("price", price);
 
-        hotelList.add(template.queryForObject(sql, param, HOTEL_ROW_MAPPER));
-
-        for(Hotel hotel : hotelList) {
-            System.out.println(hotel.getHotelName());
-        }
+        hotelList = template.query(sql, param, HOTEL_ROW_MAPPER);
 
         return hotelList;
     }

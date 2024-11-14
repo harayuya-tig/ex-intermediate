@@ -21,10 +21,10 @@ public class TeamRepository {
     private static final RowMapper<Team> TEAM_ROW_MAPPER = (rs, i) -> {
         Team team = new Team();
         team.setId(rs.getInt("id"));
-        team.setLeagueName(rs.getString("leagueName"));
-        team.setTeamName(rs.getString("teamName"));
-        team.setHeadQuaters(rs.getString("headQuaters"));
-        team.setInauguration(rs.getDate("inauguration").toLocalDate());
+        team.setLeagueName(rs.getString("league_name"));
+        team.setTeamName(rs.getString("team_name"));
+        team.setHeadQuaters(rs.getString("headquarters"));
+        team.setInauguration(rs.getString("inauguration"));
         team.setHistory(rs.getString("history"));
 
         return team;

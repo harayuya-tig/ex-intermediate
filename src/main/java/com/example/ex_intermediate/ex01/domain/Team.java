@@ -8,7 +8,7 @@ public class Team {
     private String leagueName;
     private String teamName;
     private String headQuaters;
-    private LocalDate inauguration;
+    private String inauguration;
     private String history;
     
     public Integer getId() {

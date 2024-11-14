@@ -29,11 +29,21 @@ public class ClothController {
         return new ClothForm();
     }
 
+    /**
+     * 入力フォームのviewへ遷移
+     * @return 入力フォームのview
+     */
     @RequestMapping("/input-form")
     public String inputForm() {
         return "ex03/input-form";
     }
 
+    /**
+     * リクエストパラメーターを受取り、処理の後、結果出力画面のviewへ遷移
+     * @param form 服の情報のフォーム
+     * @param model リクエストスコープのオブジェクト
+     * @return 結果出力画面のview
+     */
     @RequestMapping("/input-info")
     public String inputInfo(ClothForm form, Model model) {
         List<Cloth> clothList = new ArrayList<>();
@@ -43,13 +53,5 @@ public class ClothController {
         model.addAttribute("clothList", clothList);
 
         return "ex03/show-list";
-
-        /** テスト用 
-        for (Cloth cloth : clothList) {
-            System.out.println("テスト");
-            System.out.println(cloth.getCategory());
-        }
-        return "ex03/test";
-        */
     }
 }

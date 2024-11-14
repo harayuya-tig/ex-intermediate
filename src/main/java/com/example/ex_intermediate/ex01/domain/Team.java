@@ -1,4 +1,4 @@
-package com.example.ex_intermediate.domain;
+package com.example.ex_intermediate.ex01.domain;
 
 import java.time.LocalDate;
 

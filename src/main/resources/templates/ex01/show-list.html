@@ -8,12 +8,13 @@
 <body>
     <h2>野球チーム一覧</h2>
 
-    <div th:each="team : ${showList}">
-        <h3>
-            <a th:href="@{/team/list?id=} + ${team.id}">
-                <span th:text="${team.name}">チーム名</span>
-            </a>
-        </h3>
-    </div>
+    <h3>
+        <div th:each="team : ${showList}">
+                <a th:href="@{/team/list?id=} + ${team.id}">
+                    <span th:text="${team.name}">dummy</span>
+                </a>
+                <br>
+        </div>
+    </h3>
 </body>
 </html>

@@ -1,6 +1,9 @@
-package com.example.ex_intermediate.repository;
+package com.example.ex_intermediate.ex01.repository;
 
 import org.springframework.stereotype.Repository;
+
+import com.example.ex_intermediate.ex01.domain.Team;
+
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
@@ -8,7 +11,6 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import java.util.List;
 import java.util.ArrayList;
-import com.example.ex_intermediate.domain.Team;
 
 @Repository
 public class TeamRepository {

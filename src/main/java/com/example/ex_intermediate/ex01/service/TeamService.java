@@ -1,11 +1,12 @@
-package com.example.ex_intermediate.service;
+package com.example.ex_intermediate.ex01.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.example.ex_intermediate.domain.Team;
-import com.example.ex_intermediate.repository.TeamRepository;
+import com.example.ex_intermediate.ex01.domain.Team;
+import com.example.ex_intermediate.ex01.repository.TeamRepository;
+
 import java.util.List;
 
 @Service

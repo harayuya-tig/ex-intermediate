@@ -15,8 +15,21 @@ public class TeamService {
     @Autowired
     private TeamRepository repository;
 
+    /**
+     * 全チームの検索を行う
+     * @return 全チームのリストのオブジェクト
+     */
     public List<Team> findAll() {
         return repository.findAll();
+    }
+
+    /**
+     * idでチームの全件検索を行う
+     * @param id ID
+     * @return チームのオブジェクト
+     */
+    public Team findById(Integer id) {
+        return repository.findById(id);
     }
 
 }

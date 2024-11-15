@@ -18,7 +18,6 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import java.util.ArrayList;
 
 import com.example.ex_intermediate.ex03.domain.Cloth;
-import com.example.ex_intermediate.ex03.service.ClothService;
 
 @Repository
 public class ClothRepository {

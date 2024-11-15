@@ -12,7 +12,8 @@
     </style>
 </head>
 <body>
-    <div th:if="${clothList!=null}">
+    <div th:if="${clothList==null}" th:text="該当する商品が存在しません">該当なしの場合：該当する商品が存在しません</div>
+    <div th:unless="${clothList==null}">
         <table th:each="cloth : ${clothList}">
             <tr>
                 <td>ジャンル</td>
@@ -28,6 +29,5 @@
             </tr>
         </table>
     </div>
-    <div th:unless="${clothList!=null}" th:text="該当する商品が存在しません">該当なしの場合：該当する商品が存在しません</div>
 </body>
 </html>

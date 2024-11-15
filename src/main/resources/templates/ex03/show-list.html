@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            border: solid;
+            border-style: inset;
+        }
+    </style>
+</head>
+<body>
+    <div th:if="${clothList==null}" th:text="該当する商品が存在しません">該当なしの場合：該当する商品が存在しません</div>
+    <div th:unless="${clothList==null}">
+        <table th:each="cloth : ${clothList}">
+            <tr>
+                <td>ジャンル</td>
+                <td th:text="${cloth.genre}">ジャケット</td>
+            </tr>
+            <tr>
+                <td>サイズ</td>
+                <td th:text="${cloth.size}">M</td>
+            </tr>
+            <tr>
+                <td>価格</td>
+                <td th:text="${cloth.price}">5000</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
